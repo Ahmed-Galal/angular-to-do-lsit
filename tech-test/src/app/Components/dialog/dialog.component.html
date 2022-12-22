@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>To Do</h1>
+<div mat-dialog-content class="container">
+  <form id="dialog-form" [formGroup]="taskform">
+    <!-- Label Column -->
+    <mat-form-field appearance="fill">
+      <mat-label>Label</mat-label>
+      <input id="label-input-id" formControlName="label" matInput>
+    </mat-form-field>
+    <!-- Description Column -->
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input id="description-input-id" formControlName="description" matInput>
+    </mat-form-field>
+    <!-- Category Column -->
+    <mat-form-field appearance="fill" *ngIf="CategoryList">
+      <mat-label>Category</mat-label>
+      <mat-select id="category-input-id" formControlName="category">
+        <ng-container *ngFor="let category of CategoryList">
+          <mat-option [value]="category.name">{{category.name}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+    <!-- Done Column -->
+    <mat-form-field appearance="fill">
+      <mat-label>Done</mat-label>
+      <input id="done-input-id" formControlName="done" matInput>
+    </mat-form-field>
+  </form>
+
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button id="form-btn-save"  mat-raised-button color="primary" (click)="SaveTask()">Save</button>
+  </div>
+</div>
