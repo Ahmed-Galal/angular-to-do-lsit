@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
   DarkModeToggle({ checked }: MatSlideToggleChange) {
     this.DarkModeSwitched.emit(checked);
   }
-  Add(): void {
+  add(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '30%',
       height: '500px',

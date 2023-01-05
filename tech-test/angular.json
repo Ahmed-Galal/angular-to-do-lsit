@@ -125,5 +125,8 @@
         }
       }
     }},
-  "defaultProject": "tech-test"
+  "defaultProject": "tech-test",
+  "cli": {
+    "analytics": false
+  }
 }
